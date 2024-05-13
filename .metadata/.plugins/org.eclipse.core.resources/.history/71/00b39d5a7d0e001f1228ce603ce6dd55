@@ -1,0 +1,37 @@
+package com.fast.collection;
+
+import java.util.ArrayList;
+import java.util.HashSet;
+
+public class Lec11컬렉션HashSet {
+
+	public static void main(String[] args) {
+		
+		HashSet hs = new HashSet();
+		// = Set<String> hs = new HashSet<>();
+		
+		hs.add("abc");
+		hs.add(10);
+		hs.add('A');
+	  //hs.add('A'); 해쉬셋은 중복이 불가하다.
+		System.out.println(hs); //출력결과 : [A, abc, 10]
+		
+		//해쉬셋은 순서보장이 없다. 그냥 집어넣어들어간다. 또한 중복이 불가하다.
+		
+		
+		
+		hs.remove('A');
+		System.out.println(hs); //[abc, 10] -> 'A'를 지운다.
+		
+		
+		
+		//list채로 담아서 생성자 생성
+		ArrayList list = new ArrayList(hs);
+		
+
+		
+		
+	
+	}
+
+}

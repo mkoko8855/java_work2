@@ -1,0 +1,32 @@
+package com.kosta.sample.json;
+
+public class EmpVO {
+
+	
+	private int impno;
+	private String Ename;
+	private int sal;
+	public int getImpno() {
+		return impno;
+	}
+	
+	public void setImpno(int impno) {
+		this.impno = impno;
+	}
+	public String getEname() {
+		return Ename;
+	}
+	public void setEname(String ename) {
+		Ename = ename;
+	}
+	public int getSal() {
+		return sal;
+	}
+	public void setSal(int sal) {
+		this.sal = sal;
+	}
+	
+	
+	
+	
+}

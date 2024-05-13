@@ -1,0 +1,19 @@
+package com.kosta.sample.quiz1;
+
+public class Score {
+
+	public Score() {
+		System.out.println("국어\t 영어\t 수학");
+	}
+
+	public Score(int kor, int eng, int math) {
+		this(); // new Score();
+		System.out.println(kor + "\t" + eng + "\t" + math);
+	}
+
+	public static void main(String[] a) {
+		new Score(100, 90, 80);
+		new Score(88, 77, 66);
+
+	}
+}

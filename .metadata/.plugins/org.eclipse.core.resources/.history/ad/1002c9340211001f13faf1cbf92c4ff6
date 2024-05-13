@@ -1,0 +1,18 @@
+package com.kosta.sample.json;
+
+import java.util.HashMap;
+
+public class JacksonTest {
+
+	public static void main(String[] args) {
+		
+		//API -> https://javadoc.io/doc/com.fasterxml.jackson.core/jackson-databind/latest/index.html
+		
+		HashMap<String, String> map = new HashMap<String, String>();
+		
+		
+		
+		
+	}
+
+}

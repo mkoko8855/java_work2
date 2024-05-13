@@ -1,0 +1,21 @@
+package com.kosta.override;
+
+
+
+class MyParent{
+	
+}
+
+
+
+
+
+
+
+public class Child extends MyParent {
+
+	public static void main(String[] args) {
+		
+	}
+
+}

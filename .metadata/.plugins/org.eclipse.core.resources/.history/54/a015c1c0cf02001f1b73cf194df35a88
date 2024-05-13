@@ -1,0 +1,204 @@
+package com.kosta.lec;
+
+public class Loop {
+
+	public static void main(String[] args) {
+
+		// for(초기화; 조건문; 증감문;) {할일}
+		//int i = 0; //초기화 문장임
+		//i<=5; //조건문 문장임
+		//i = i+1; 를 깔끔하게 하면 i += 1 좀더 깔끔하게 하려면 i++;
+		//for(int i = 0; i<=5; i++) {
+			//System.out.println(i); // 0 1 2 3 4 5
+			//System.out.println(i+1); // 0 1 2 3 4 5 6
+			
+		//}
+		
+		int sum =0;
+		for(int a=1; a<=100; a++){
+			sum = sum+a;
+		}
+		System.out.println(sum); //5050
+		
+		System.out.println("========================1");
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		for(int a1=0; a1<=8; a1+=2) {
+			System.out.println(a1);
+		}
+		
+		System.out.println("========================2");
+		
+		int a2 = 0;
+		while(a2<=8) {
+			System.out.println(a2);
+			a2+=2;
+		}
+		
+		System.out.println("========================3");
+		
+		int a3=0;
+		do {
+			System.out.println(a3);
+			a3+=2;
+		} while(a3<=8);
+	
+		
+		System.out.println("========================4");
+
+		
+		
+		//다른 방법도 있다
+		for(int num = 0; num<5; num++) {
+			System.out.println(num*2);
+		} 
+		
+		
+		System.out.println("========================5");
+
+		
+		
+		
+		
+		for (int a4=1; a4<=9; a4++) {
+			System.out.println(a4 + "단");
+			for (int a5=1; a5<=9; a5++) {
+				System.out.print(a4 + " x " + a5 + " = " + (a4*a5) + "\t");
+			}
+			System.out.println();
+		}
+		
+				
+		System.out.println("========================5");
+		
+		
+		//9 7 5 3단만 출력해라
+		for(int a=9; a>=3; a-=2) {
+			System.out.println(a + "단");
+			for(int b=9; b>=1; b--) {
+				System.out.print(a + "x" + b + " = " + (a*b) + "\t");
+			}
+			System.out.println();
+		}
+	 
+
+		
+		
+		
+				
+				
+		
+		
+		
+		
+		
+		
+//		int b = 1;
+//		int sum2 = 0;
+//			while(b<=100) {
+//				sum2+=b;
+//				b++;
+//			}
+//			System.out.println("1~100까지의 합 -> "+sum2);
+//		  
+//		System.out.println("----------------------------2");
+
+		
+		
+		
+		
+		
+			
+//		for (int i = 1; i <= 10; i++) {
+//			if (i>7) {
+//				break;
+//			}
+//			System.out.println(i + " ");
+//		} // 1 2 3 4 5 6 7
+			
+			
+		
+		
+		
+//		  int a6=2;
+//	      int a7=1;
+//	        while (a6<=9) {     
+//	           while (a7<=9) {
+//	             System.out.print( a6 +" X "+ a7 +" = " + (a6*a7));
+//	             a7++;
+//	           } 
+//	             a7=1; 
+//	             a6++;
+//	    }
+			
+		
+		
+		
+//		int i = 1;
+//		while(true) {
+//			if(i>5) {
+//				break;
+//			}
+//			System.out.println("안녕하세요 " + i );
+//			i++;
+//		}
+//		//안녕하세요1 안녕하세요2 안녕하세요3 안녕하세요4 안녕하세요5
+//
+//			
+//		System.out.println("----------------------------4");
+
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		// while(조건문) {증감문}
+//		int c = 0;
+//		while(c<=5) {
+//			System.out.println(c);
+//			c++; 
+//		}
+		// 결과 : 0 1 2 3 4 5
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		// do { 증감문 } while (조건문);
+//		int d = 0;
+//		do {
+//			System.out.println(d);
+//			d++;
+//		} while(d<=5);
+		// 결과 : 0 1 2 3 4 5
+		
+		
+	}
+
+}

@@ -1,0 +1,28 @@
+package com.fast.collection;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+public class Lec11컬렉션복합2 {
+
+	
+	
+	public static void main(String[] args) {
+		
+		//{seq="1", title="제목1", rdate="2024-01-01", regid="kim"}
+		//{seq="2", title="제목2", rdate="2024-01-01", regid="kim2"}
+		//리스트에서 맵을 담아보자
+		
+		//ArrayList<ArrayList<String>> list2 = new ArrayList<ArrayList<String>>();
+		//Map<String, Object> map = new HashMap<String, Object>(); 
+
+        ArrayList<Map<String, Object>> list = new ArrayList<>();
+        ((Map<String, Object>) list).put("seq","1");
+        
+        
+		
+	}
+
+}

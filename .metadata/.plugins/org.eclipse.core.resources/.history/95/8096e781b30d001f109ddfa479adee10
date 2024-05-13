@@ -1,0 +1,31 @@
+package com.kosta.interface1;
+
+public class Basic2 implements Basic {
+
+	
+	@Override
+	public void add() {
+		
+	}
+	
+	@Override
+	public void inter1ParentMethod1() {
+		
+	}
+
+	@Override
+	public void inter1ParentMethod2() {
+		
+	}
+
+	@Override
+	public void inter2ParentMethod1() {
+		
+	}
+
+	
+	public static void main(String[] args) {
+
+	}
+
+}

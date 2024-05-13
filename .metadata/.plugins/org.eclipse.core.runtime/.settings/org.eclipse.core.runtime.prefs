@@ -1,0 +1,5 @@
+content-types/org.eclipse.buildship.core.files.gradlebuildscript/charset=UTF-8
+content-types/org.eclipse.core.runtime.text/charset=UTF-8
+content-types/org.eclipse.jpt.common.core.content.jar/charset=UTF-8
+content-types/org.eclipse.wst.xml.core.xmlsource/file-names=pom.xml
+eclipse.preferences.version=1

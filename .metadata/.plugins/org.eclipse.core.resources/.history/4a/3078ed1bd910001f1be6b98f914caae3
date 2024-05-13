@@ -1,0 +1,12 @@
+package com.kosta.sample.json;
+
+public class VOTestMain {
+
+	public static void main(String[] args) {
+		EmpVO emp = new EmpVO();
+        emp.setImpno(1);
+        emp.setEname("John");
+        emp.setSal(50000);
+	}
+
+}

@@ -1,0 +1,55 @@
+package com.kosta.exception;
+
+public class Basic {
+
+	public static void main(String[] args) {
+
+		int res = 0;
+		try {
+			//코드라인
+			System.out.println("1. try");
+			int num = 100;
+			//int res = num/50; 위에다 초기화해줬으니 int빼자. Sysout(res)를 못찍으니까.
+			res = num/0;
+			
+			int[] arr = {1, 2, 3};
+			for(int i=0; i<arr.length; i++) {
+				System.out.println(arr[i]);
+				
+				arr[i] += arr[i+1];
+			}
+			
+			
+		} catch(Exception e) {
+			//예외가 발생했을 경우 여기서 예외처리를 해준다.
+			System.out.println("예외(2. catch)가 발생했어요");
+			System.out.println(e.getMessage());
+			System.out.println(e.getCause());
+			System.out.println(e.getClass());
+			//그리고 예외처리를 하라는 공간.
+			System.out.println(res);
+		} finally {
+			System.out.println("예외 발생 하던 말던 아무튼 실행 될 문장");
+		}
+		
+		
+		
+		
+		
+		String[] pets = { "강아지", "고양이", "짹짹이" };
+
+		for (int i = 0; i < 4; i++) {
+			try {
+				System.out.println(pets[i] + "키우고 싶다");
+			} catch (Exception e) {
+				System.out.println("애완 동물의 정보가 없다.");
+			} finally { // 예외가 발생 하든 말든 실행 하고 싶을 때 사용한다.
+						// finally는 필수는 아님. 필요없으면 안 써도 됨, 주로 객체를 반납하거나 메모리에서 해제할 때 주로 사용한다.
+				System.out.println("예외 발생 하던 말던 아무튼 실행 될 문장");
+				System.out.println("----------------------------");
+			}
+		}
+	}
+	
+
+}

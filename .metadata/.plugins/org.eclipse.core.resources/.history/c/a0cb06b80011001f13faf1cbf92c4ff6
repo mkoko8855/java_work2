@@ -1,0 +1,14 @@
+package com.kosta.sample.json;
+
+public class JacksonTest {
+
+	public static void main(String[] args) {
+		
+		//API -> https://javadoc.io/doc/com.fasterxml.jackson.core/jackson-databind/latest/index.html
+		
+		
+		
+		
+	}
+
+}

@@ -1,0 +1,28 @@
+package com.kosta.Inh;
+
+class Parent {
+
+    public int = 20;
+}
+
+class Child extends Parent {
+    public int age = 25; 
+    void search () {
+      
+       //자식 클래스 참조
+       System.out.println(this.age);
+       //부모 클래스 참조
+       System.out.println(super.age);
+  }
+}
+
+public class Inheritance2 {
+    public static void main(String[] args) {
+        Child child = new Child();
+        child.search();
+    }
+}
+
+// --------------------------------------------------------------------------------
+// 20
+// 25

@@ -1,0 +1,62 @@
+// 20240424 3
+
+package com.kosta.lec;
+
+import java.util.Scanner;
+
+public class IfSwitch {
+
+	public static void main(String[] args) {
+
+		// 조건문 if -> Oracle로 CASE WHEN THEN END와 같음
+		
+		int a = 50;
+		if(a==1) {
+			System.out.println("SK");
+		} else if(a==6) {
+			System.out.println("KTF");
+		} else if(a==9) {
+			System.out.println("LG");
+		} else {
+			System.out.println("UNKNOWN");
+		}
+		
+		
+		// 위를 스위치문으로 바꾸면,
+//		Scanner sc = new Scanner(System.in);
+//		System.out.println("뭐누를꺼야?");
+//		int a1 = sc.nextInt();
+		int num = 1;
+		switch(num){
+		case 1:
+			System.out.println("SK");
+			break;
+		case 6:
+			System.out.println("KTF");
+			break;
+		case 9:
+			System.out.println("LG");
+			break;
+		default:
+			System.out.println("UNKNOWN");
+		}
+		
+		int score = 70;
+		switch(score) {
+		case 90:
+			System.out.println("A");
+			break;
+		case 80:
+			System.out.println("B");
+			break;
+		case 70:
+			System.out.println("C");
+			break;
+		default:
+			System.out.println("F");
+		}
+		
+		
+	}
+
+}

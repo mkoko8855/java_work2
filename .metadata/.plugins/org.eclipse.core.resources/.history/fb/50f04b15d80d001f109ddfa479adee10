@@ -1,0 +1,24 @@
+package com.kosta.shop;
+
+class Order
+
+
+
+
+
+public class ShopCallTest2 {
+
+	public static void main(String[] args) {
+		User u = new User();
+		
+		//Order o = new MemberOrder();
+		int mRes = u.orderByUser(new MemberOrder(), 1000);
+		System.out.println("회원구매:" + mRes);
+		
+		
+		//Order o = new GuestOrder();
+		int gRes = u.orderByUser(new GuestOrder(), 1000);
+		System.out.println("비회원구매:" + gRes);
+	}
+
+}

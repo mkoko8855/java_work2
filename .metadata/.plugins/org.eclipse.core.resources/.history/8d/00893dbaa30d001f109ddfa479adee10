@@ -1,0 +1,28 @@
+package com.kosta.abstract1;
+
+/*
+abstract(추상, 미완성)
+- 클래스 : abstract 메서드가 있을 '수'도 있다. 또한, new(인스턴스생성)를 못함!!
+클래스앞에 abstract 놓으면됨 -> public abstract class Basic 처럼
+
+- 메서드 : 바디가 없는 메서드
+*/
+
+public abstract class Basic {
+
+	
+	public abstract void absMethod(); //추상메서드다. 바디는 상속받는애가 구현한다.
+	
+	public void nomalMethod() {
+		System.out.println("aa");
+	}
+	
+	public static void main(String[] args) {
+		//Basic o = new Basic(); 이거불가능. 
+		//o.nomalMethod(); 당연히안됨
+		//클래스가 abstract이라는 것은 new를못함
+	
+	
+	}
+
+}

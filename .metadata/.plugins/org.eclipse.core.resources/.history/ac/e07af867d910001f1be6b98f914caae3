@@ -1,0 +1,17 @@
+package com.kosta.sample.json;
+
+public class VOTestMain {
+
+	public static void main(String[] args) {
+		EmpVO emp = new EmpVO();
+        emp.setEmpno(1);
+        emp.setEname("John");
+        emp.setSal(50000);
+        
+        // 직원 정보 출력
+        System.out.println("직원 번호: " + emp.getEmpno());
+        System.out.println("직원 이름: " + emp.getEname());
+        System.out.println("급여: " + emp.getSal());
+	}
+
+}

@@ -1,0 +1,9 @@
+package com.kosta.abstract1;
+
+public abstract class Basic2 extends Basic {
+	
+	//상속 받은 메서드를 '반드시' 구현해야한다.
+	public static void main(String[] args) {
+		
+	}
+}

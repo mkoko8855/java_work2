@@ -1,0 +1,23 @@
+package com.kosta.exception;
+
+public class Throws1 {
+
+	public static void main(String[] args) {
+		
+		int res = 0;
+		
+		try {
+			System.out.println("11");
+			System.out.println("22");
+			
+			Exception MyExc = new Exception();
+			throw MyExc;
+			//System.out.println("33"); MyExc를 만나는 순간 나가버림. 의미없는코드며 오류임.
+		
+		
+		}catch(Exception e) {
+			System.out.println(e.getClass());
+		}
+	}
+
+}

@@ -1,0 +1,8 @@
+package com.kosta.abstract1;
+
+public abstract class Basic2 extends Basic {
+	
+	public static void main(String[] args) {
+		
+	}
+}

@@ -1,0 +1,47 @@
+package com.kosta.sample.json;
+
+import java.util.HashMap;
+
+import org.json.simple.*;
+import com.fasterxml.jackson.*;
+
+import org.json.simple.parser.JSONParser;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.ParseException;
+
+
+
+public class JsonTest {
+
+	public static void main(String[] args) {
+		
+		HashMap<String, String> map = new HashMap<String, String>();
+		map.put("empno", "7733");
+		map.put("ename", "smith");
+		map.put("sal", "600");
+		System.out.println(map.get("ename"));
+		//자바의 맵 : {ename=smith, empno=7733, sal=600} 
+		//스프링의 맵 : 
+		String jsonStr = "{\"ename\":\"smith\", \"empno\", \"}";
+		
+		
+		JSONObject obj = new JSONObject();
+		//String res = obj.getString("ename");
+		JSONParser parser = new JSONParser();
+		
+		
+		//parser.parse(jsonStr); //얘가 Object를 리턴한다.
+		//근데 맵으로 바꾸고 싶은거니
+		HashMap map2 = new HashMap();
+		try {
+			map2 = (HashMap)parser.parse(jsonStr); //맵으로 바꿨으니 꺼내자
+			System.out.println(map2);
+			String a = (String)map2.get("ename"); //걍 제네릭쓰자 이거오바임
+		} catch (ParseException e) {
+			System.err.println("스트링을 map으로 바꾸다 에러남");
+			e.printStackTrace();
+		}
+		
+		
+	}
+}

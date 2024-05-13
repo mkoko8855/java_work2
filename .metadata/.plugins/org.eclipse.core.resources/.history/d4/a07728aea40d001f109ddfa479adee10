@@ -1,0 +1,9 @@
+package com.kosta.abstract1;
+
+//상속 받은 abstract 메서드를 '반드시' 구현해야한다. -> 자식클래스에서 오버라이딩!
+public abstract class Basic2 extends Basic {
+	
+	public static void main(String[] args) {
+		
+	}
+}

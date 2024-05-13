@@ -1,0 +1,29 @@
+package com.kosta.abstract1;
+
+//상속 받은 abstract 메서드를 '반드시' 구현해야한다. -> 자식클래스에서 오버라이딩!
+public abstract class Basic2 extends Basic {
+	
+	
+	//★★★★★★★★★★★★  반드시 부모 클래스에 있는 추상메서드를 반드시 오버라이딩!
+	public      void absMethod() {
+		System.out.println("오버라이딩으로 바디 완성해!");
+	}
+	
+	
+	
+	//근데 만약 부모클래스에서 추상메서드가 여러개있는데 그 중 하나를 쓰기위해
+	//나머지도 전부 오버라이딩 해야 한다.
+	public     void absMethod2(){}
+
+	public     void absMethod3(){}
+
+	public     void absMethod4(){}
+	
+	public static void main(String[] args) {
+		
+	}
+	
+	
+	
+	
+}

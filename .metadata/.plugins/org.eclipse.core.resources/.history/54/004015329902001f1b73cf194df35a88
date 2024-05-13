@@ -1,0 +1,238 @@
+// 20240424 2
+package com.kosta.lec;
+
+public class Operator {
+
+	//객체 안에는
+	//변수와 메서드가 올 수 있다.
+	//아래 메인 메서드는 변수가 아니라 메서드다.
+	//즉, 메인메서드는 진입점을 알리는 것이기에 실행 구문은 메인메서드 안에서 해야 한다.
+		
+	public static void main(String[] args) {
+
+		
+		boolean status = true;
+		System.out.println(!status); // false
+		
+		int num = 3;
+		System.out.println(++num); // 4
+		
+		num = 3;
+		System.out.println(num/2); // 1 (나머지출력안됨)
+		
+		num = 5;
+		System.out.println(num%2); // 1 (나머지로출력됨)
+		
+		
+		
+		// 대입 연산자
+		int a = 10;
+		int res = a + 5;
+		System.out.println(res);
+		
+		int b = 10;
+		b = b + 5;
+		System.out.println(b);
+		
+		// 쉽게 써보자
+		int c = 10;
+		c += 5;
+		System.out.println(c);
+		
+		int d = 20;
+		d -= 10;
+		System.out.println(d);
+		
+		
+		
+		int num1 = 10;
+		int num2 = 20;
+		
+		if (num1 != num2) { //같다 라고 표현할 꺼면 ==으로 표현한다.
+			System.out.println("다르다");
+		} else {
+			System.out.println("같다");
+		}
+		
+		
+		
+		
+		
+		
+		// 증감연산자(전위)
+		int i = 5;
+		int j = 0;
+		
+		j = ++i; // i값을 ++한 후에 j에 넣는다
+		System.out.println(i + "," + j); // 6과 6이 나온다.
+		
+		
+		// 증감연산자(후위)
+		int k = 5;
+		int m = 0;
+		
+		m = k++; // k값을 m에 넣은 후에 k를 ++한다.
+		System.out.println(m + "," + k); // 5, 6이 나온다.
+		
+		
+		
+		
+		
+		 /*
+		 이항연산자 (변수가 2개인 연산)
+		 int보다 크기가 작은 타입은 int로 변환한다
+		 byte, char, short -> int
+		 
+		 그리고, 표현 범위가 큰 타입으로 형변환한다(암묵적 형변환)
+		 byte + short -> int + int + int
+		 char + int -> int + int -> int
+		 float + int -> float + float -> float
+		 long + float -> float + float -> float
+		*/
+		
+		
+		/*
+		byte a1 = 10;
+		byte b1 = 20;
+		byte c1 = a1 + b1;
+		
+		byte c1 = (byte)a1 + b1; //에러 
+		int c1 = (byte)a1 + b;   //OK
+		byte c = (byte)(a + b);  //OK
+		*/
+		
+		
+		
+		// 비트 연산은 1과 0을 비교하는 연산이다.
+		// & | -> and와 or을 표현하는 연산이다.
+		
+		// 논리 연산은 true와 false를 비교하는 연산이다
+		// && || -> and와 or을 표현하는 연산이다.
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		// 삼항 연산자
+		// 삼항 연산자 ->   (조건식) ? 식1 : 식2
+		
+		/*
+		 
+		 
+		*/ 
+		
+		int score = 50;
+		char grade = score >= 90 ? 'A' : (score >= 80 ? 'B' : 'C');
+		// 조건은 score가 90보다 크니? 맞으면 'A' 라고 하고,
+		// 그렇지 않으면 (score >= 80 ? 'B' : 'C') 라고 할껀데,
+		// 다시 score가 80보다 크거나 같으면 'B', 아니면 'C'라고 출력한다.
+		
+		// if else문으로 바꾸면 다음과 같다.
+		if(score >= 90) {
+			System.out.println('A');
+		} else if(score >= 80) {
+			System.out.println('B');
+		} else {
+			System.out.println('C');
+		}
+		
+		
+		// 삼항연산자 예시
+		if (num1 != num2) { //같다 라고 표현할 꺼면 ==으로 표현한다.
+			System.out.println("다르다");
+		} else {
+			System.out.println("같다");
+		}
+		
+				
+		String result = (num1 != num2) ? "다르다" : "같다";
+		//맞으면 다르다를 출력, 틀리면 같다를 출력.
+		
+		 char grade2 = 'B';
+	     int result2 = (grade2 == 'A') ? 90 : 80;
+	     System.out.println(result2);
+		
+		
+		// char grade = score >= 90 ? 'A' : (score >= 80 ? 'B' : 'C');
+          
+		
+
+		// grade는 C이다. 
+		// A라면 90출력, B라면 80이 출력되야한다. C라면 70이출력한다.
+		char grade3 = 'C';
+		int result3 = (grade3 == 'A') ? 90 : (grade3 == 'B') ? 80 : 70;
+		System.out.println(result3);
+		//70이 출력된다.
+		
+		
+		
+		
+		// 문제 : num3의 값에 따라 '양수', '음수', '0'을 출력하는 코드를 출력하라
+		int num3 = 10;
+		String result4 = (num3 > 0) ? "양수" : (num3 < 0) ? "음수" : "0";
+		System.out.println(result4);
+		
+		
+		
+		
+		// 문제 : 
+		// num의 값 중에서 백의 자리 이하를 버리는 코드이다. 
+		// 만일 변수 num의 값이 '456'이라면 '400'이 되고, '111' 이라면 '100'이 된다.
+		
+		
+		// 방법 1
+		num = 456;
+		int rem = num % 100;
+		num -= rem;
+		System.out.println(num);
+		
+		
+		// 방법 2
+		int num4 = 456;
+		int ans4 = (num4 / 100) * 100;
+		System.out.println(ans4);
+		System.out.println((num3 / 100) * 100);
+		
+		
+		// 방법 3
+		int tn = 456;
+		int t = (int) ((float)tn * 0.01f);
+		System.out.println(t * 100);
+		
+		
+		// 방법 4
+		int num5 = 456;
+        num5 -= 56;
+        System.out.println(num5);
+		
+		// 방법 5
+        int quizNum2 = 456;
+		int quizNum2X = quizNum2 - (quizNum2 % 100);
+		System.out.println("3-4 : " + quizNum2X);
+		
+		
+		// 방법 6
+		int num6 = 456;
+		int num61 = (num6 / 100) * 100;
+		System.out.println(num61);
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	}
+
+}

@@ -1,0 +1,22 @@
+package com.kosta.override;
+
+
+//오버 라이딩(over riding)
+//상속관계에서 부모 메서드를 재사용 한다.
+class MyParent{
+	
+}
+
+
+
+
+
+
+
+public class Child extends MyParent {
+
+	public static void main(String[] args) {
+		
+	}
+
+}

@@ -1,0 +1,14 @@
+package com.fast.collection;
+
+import java.util.HashSet;
+
+public class Lec11컬렉션HashSet {
+
+	public static void main(String[] args) {
+		
+		HashSet hs = new HashSet();
+		
+	
+	}
+
+}

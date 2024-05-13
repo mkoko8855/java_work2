@@ -1,0 +1,23 @@
+package com.kosta.shop;
+
+class User {
+	
+	private final int ORDER_POINT = 100;
+	
+	public int getOrderPoint() {
+		return this.ORDER_POINT;
+	}
+}
+
+
+
+
+
+
+public class ShopCallTest {
+
+	public static void main(String[] args) {
+		
+	}
+
+}

@@ -1,0 +1,9 @@
+package com.kosta.abstract1;
+
+public class Basic3 {
+
+	public static void main(String[] args) {
+		
+	}
+
+}

@@ -162,29 +162,16 @@ public class JDBCCallTest {
 				int eno = rs.getInt("empno"); //컬럼 이름을 넣자. Int로 꺼내달라 했으니..타입은 int로
 				String name = rs.getString("ename"); //이번엔 String
 				System.out.println(eno + "\t" + name); 
-				//ArrayList에 담아서 출력해도됨 -> 몇명인지 모르니 ArrayList, VO, Map에 담아보자!
-				//ArrayList에 담아서 출력해도됨 -> 몇명인지 모르니 ArrayList, VO, Map에 담아보자!
-				//ArrayList에 담아서 출력해도됨 -> 몇명인지 모르니 ArrayList, VO, Map에 담아보자!
-				//ArrayList에 담아서 출력해도됨 -> 몇명인지 모르니 ArrayList, VO, Map에 담아보자!
+				//ArrayList에 담아서 출력해도됨 -> 몇명인지 모르니 ArrayList, VO, Map에 담아보자
+				//ArrayList에 담아서 출력해도됨 -> 몇명인지 모르니 ArrayList, VO, Map에 담아보자
+				//ArrayList에 담아서 출력해도됨 -> 몇명인지 모르니 ArrayList, VO, Map에 담아보자
+				//ArrayList에 담아서 출력해도됨 -> 몇명인지 모르니 ArrayList, VO, Map에 담아보자
 			}
 			
 			
 		} catch (SQLException e) {
 			e.printStackTrace();
-		} finally {
-			try {
-				rs.close();
-				pstmt.close();
-				conn.close();
-			} catch (SQLException e) {
-				e.printStackTrace();
-			}
 		}
-		
-		
-		
-		
-		
 		
 		
 //		String sql = "SELECT * FROM emp";

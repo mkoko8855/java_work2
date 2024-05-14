@@ -142,18 +142,31 @@ public class JDBCCallTest {
 			  	
 			  
 			  }
-			  System.err.println("총 :" + list.size());
-			  for(int i=0; i<list.size(); i++){
+			  System.err.println(밥상);
 			  
-			  int a = list.get(i).getEmpno();
-			  String b = list.get(i).getEname(); 
+			 
+			  for(int i=0; i<밥상.size(); i++){
+			  	int a = (int)밥상.get(i).get("empno"); //get(i)는 한 사람씩 식판이 튀어나옴 
+			  	String b = (String)밥상.get(i).get("ename"); //integer로 rapper돼서 나온다. 
 			  System.out.println(a + "\t" + b);
+			  
 			  }
 			  
 			  
-			  VO가 편함! 이 방식 계속 사용할거임!
+			  
 			  
 			*/
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
 			
 			
 			
@@ -161,30 +174,14 @@ public class JDBCCallTest {
 			while(rs.next() == true) { //next는 한 줄을 읽음 -> next 다 돌고 읽을게 없으면 false
 				int eno = rs.getInt("empno"); //컬럼 이름을 넣자. Int로 꺼내달라 했으니..타입은 int로
 				String name = rs.getString("ename"); //이번엔 String
-				System.out.println(eno + "\t" + name); 
-				//ArrayList에 담아서 출력해도됨 -> 몇명인지 모르니 ArrayList, VO, Map에 담아보자!
-				//ArrayList에 담아서 출력해도됨 -> 몇명인지 모르니 ArrayList, VO, Map에 담아보자!
-				//ArrayList에 담아서 출력해도됨 -> 몇명인지 모르니 ArrayList, VO, Map에 담아보자!
-				//ArrayList에 담아서 출력해도됨 -> 몇명인지 모르니 ArrayList, VO, Map에 담아보자!
+				System.out.println(eno + "\t" + name); //ArrayList에 담아서 출력해도됨 -> 몇명인지 모르니 ArrayList, VO, Map에 담아보자
+				
 			}
 			
 			
 		} catch (SQLException e) {
 			e.printStackTrace();
-		} finally {
-			try {
-				rs.close();
-				pstmt.close();
-				conn.close();
-			} catch (SQLException e) {
-				e.printStackTrace();
-			}
 		}
-		
-		
-		
-		
-		
 		
 		
 //		String sql = "SELECT * FROM emp";

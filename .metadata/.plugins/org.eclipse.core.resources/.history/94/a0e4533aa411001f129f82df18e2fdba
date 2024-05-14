@@ -1,0 +1,40 @@
+package com.kosta.sample.json;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+public class JsonParseTest2 {
+	
+	String made = "{
+			  "name": "KOSTA",
+			  "id": "u0001",
+			  "displayName": {
+			  	"desc": "this is kosta",
+			  	"code": "g01"
+			  },
+			  "types": ["type1","type2"],
+			  "primaryType": "ptype"
+			}";
+	
+	
+	
+	
+	
+	public static void main(String[] args) {
+		
+		 
+		
+		
+		
+	}
+
+}
+
+
+class Element {
+	private String name;
+	private String id;
+	private String displayname;
+	private String types;
+	private String primaryType;
+	
+}

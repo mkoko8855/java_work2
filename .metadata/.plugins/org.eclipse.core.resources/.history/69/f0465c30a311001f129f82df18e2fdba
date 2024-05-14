@@ -1,0 +1,9 @@
+package com.kosta.sample.json;
+
+public class JsonParseTest2 {
+
+	public static void main(String[] args) {
+		
+	}
+
+}

@@ -1,0 +1,21 @@
+package com.kosta.sample.json;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+public class JsonParseTest2 {
+
+	
+	
+	
+	
+	
+	
+	public static void main(String[] args) {
+		
+		ObjectMapper mapper = new ObjectMapper(); 
+		
+		
+		
+	}
+
+}

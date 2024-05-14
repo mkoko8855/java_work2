@@ -1,0 +1,12 @@
+package com.kosta.sample.json;
+
+public class MyJspnParseTest {
+
+	private String profile_nickname = "사랑하는 아내♥️";
+	
+	
+	public static void main(String[] args) {
+		
+	}
+
+}

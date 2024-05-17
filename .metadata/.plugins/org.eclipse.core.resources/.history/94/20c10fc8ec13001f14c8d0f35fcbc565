@@ -1,0 +1,17 @@
+package com.kosta.board;
+
+public class BoardTest1 {
+
+	
+	private Board connection = Board.oracleConn();
+	
+	
+	
+	
+	
+	
+	
+//	public static void main(String[] args) {
+//	}
+
+}

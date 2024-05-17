@@ -1,0 +1,14 @@
+package com.kosta.boardtest;
+
+import java.util.ArrayList;
+
+public class BoardCallTest {
+
+	public static void main(String[] args) {
+		BoardDAO dao = new BoardDAO();
+		dao.createTable();
+		
+		ArrayList<BoardDTO> list = dao.selectBoard();
+	}
+
+}

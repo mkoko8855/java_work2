@@ -1,0 +1,27 @@
+package com.kosta.boardtest;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+
+import com.kosta.sample.json.EmpVO;
+
+//메서드2개 -> selectBoard, deleteBoard
+public class BoardDAO {
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	public static void main(String[] args) {
+
+	}
+
+}

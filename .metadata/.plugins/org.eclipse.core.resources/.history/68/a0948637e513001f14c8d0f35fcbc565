@@ -1,0 +1,16 @@
+package com.kosta.board;
+
+public class Board {
+		
+	
+		public oracleConn() {
+			//리턴 커넥션
+		}
+		
+		public static boardSelect() {
+		
+			//리턴 vo
+		}
+		
+
+}

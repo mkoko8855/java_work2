@@ -1,9 +1,0 @@
-package com.kosta.sample.pkg;
-
-public class DelDel {
-
-	public void myprint() {
-		System.out.println("ddd");
-	}
-	
-}

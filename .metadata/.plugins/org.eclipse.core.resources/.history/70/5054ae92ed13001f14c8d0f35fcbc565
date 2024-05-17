@@ -1,0 +1,40 @@
+package com.kosta.board;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+
+public class BoardTest1 {
+
+	
+	private Board connection = Board.oracleConn();
+	
+	public void aa(Board Empvo) {
+		String sql = "SELECT * FROM emp";
+
+		try(Connection conn = connection.getConnection();
+				PreparedStatement pstmt = conn.prepareStatement(sql)){
+			
+			pstmt.setString(1, Board.get());
+			pstmt.setString(2,  Board.get());
+			pstmt.setInt(3,  Board.get
+			
+			if(pstmt.executeUpdate() == 1) {
+			} else {
+			}
+			
+		} catch (Exception e) {
+		e.printStackTrace();
+		}
+	}
+	}
+	
+	
+	
+	
+	
+	
+	
+//	public static void main(String[] args) {
+//	}
+
+}

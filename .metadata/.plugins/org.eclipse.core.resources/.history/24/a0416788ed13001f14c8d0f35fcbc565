@@ -1,0 +1,23 @@
+package com.kosta.board;
+
+public class BoardTest1 {
+
+	
+	private Board connection = Board.oracleConn();
+	
+	public void aa(Board Empvo) {
+		String sql = "SELECT * FROM emp";
+
+		
+	}
+	
+	
+	
+	
+	
+	
+	
+//	public static void main(String[] args) {
+//	}
+
+}

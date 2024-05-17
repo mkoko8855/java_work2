@@ -1,5 +1,8 @@
 package com.kosta.sample.json;
 
+
+//VO에는 값을 넣고 뺴기 위한 용도의 함수가 아닌, 어떤 함수도 들어가면 안됨!
+//VO는 무조건 엔터티 용도로 사용한다
 public class EmpVO {
 	//프로퍼티(property) --> 값을 다루는 변수(파란색 변수)
 	private int empno;

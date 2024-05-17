@@ -1,0 +1,13 @@
+package com.kosta.boardtest;
+
+public class ReplyVO {
+	
+	private int rseq; //PK
+	private String reply;
+	private String regid;
+	private String regdate;
+	private int seq; //FK
+	
+	
+	
+}

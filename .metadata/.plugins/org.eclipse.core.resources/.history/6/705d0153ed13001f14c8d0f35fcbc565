@@ -1,0 +1,22 @@
+package com.kosta.board;
+
+public class BoardTest1 {
+
+	
+	private Board connection = Board.oracleConn();
+	
+	public void aa(Board Empvo) {
+		String sql = "INSERT INTO EmpVO (serial_number, movie_name, nation, pub_year) VALUES(movie_seq.NEXTVAL, ?, ?, ?)";
+		
+	}
+	
+	
+	
+	
+	
+	
+	
+//	public static void main(String[] args) {
+//	}
+
+}

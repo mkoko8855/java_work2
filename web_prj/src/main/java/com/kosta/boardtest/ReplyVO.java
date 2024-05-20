@@ -3,9 +3,10 @@ package com.kosta.boardtest;
 public class ReplyVO {
 	private int rseq;  //PK
 	private String reply;
-	private String regid;
+	private String regid; //세션이나 쿠키로 집어넣어야 되는데, regid도 그냥 사용자한테 입력받는걸로 가자.(안배웠으니)
 	private String regdate;
 	private int seq ;   //FK 
+	
 	
 	public ReplyVO() {}
 	

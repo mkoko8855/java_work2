@@ -1,9 +1,0 @@
-package com.kosta.shop;
-
-public class ShopCallTest {
-
-	public static void main(String[] args) {
-		
-	}
-
-}

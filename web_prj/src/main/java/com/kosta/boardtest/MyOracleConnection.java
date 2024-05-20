@@ -17,7 +17,7 @@ public class MyOracleConnection {
 	private static final String DB_ID = "it";
 	private static final String DB_PW = "0000";
 	
-	public DataSource myOracleDataSource() {
+	public DataSource myOracleDataSource() { //커넥션풀에 접근할수있는 메서드
 		OracleConnectionPoolDataSource ds = null;
 		try { 
 			ds = new OracleConnectionPoolDataSource();
@@ -31,7 +31,7 @@ public class MyOracleConnection {
 	}	
 	
 	
-	public Connection oracleConn () {
+	public Connection oracleConn () { //직접적으로 받는 형태다. 본인이 클래스 로드해서 겟커넥션 하는 형태다. 이 형태보다는 위의 datasorce형식을 추천한다.
 
 		Connection conn = null;
 		PreparedStatement pstmt  = null;

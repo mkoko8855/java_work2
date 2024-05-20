@@ -2,17 +2,19 @@
 create table board(
 	seq number primary key,
 	title varchar2(30),
-	contents varchar2(50), regid varchar2(10),  regdate date default sysdate
+	contents varchar2(50), 
+	regid varchar2(10),  
+	regdate date default sysdate
 );
-create sequence board_seq start with 1  increment by 1 nocache;
+create sequence board_seq start with 1  increment by 1 nocache; 스타트1번 자동번호1번 캐시화하지말고(캐시화하면 문제날수도있어서)
 
 create table reply (
-	rseq number primary key,
-	reply varchar2(30),
+	rseq number primary key, 
+	reply varchar2(30), 답변에대한 제목
 	regid varchar2(10),
-	regdate date default sysdate,
+	regdate date default sysdate, 
 	seq number,
-	CONSTRAINT "FK_REPLY" FOREIGN KEY (SEQ) REFERENCES board(seq)
+	CONSTRAINT "FK_REPLY" FOREIGN KEY (SEQ) REFERENCES board(seq) 보드에있는 SEQ가져와서 seq number의 이름으로 쓰겠다.(외래키로)
 );
 create sequence reply_seq start with 1  increment by 1 nocache;
 

@@ -8,28 +8,28 @@
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
-			<item value="pstmt"/>
-			<item value="parse"/>
-			<item value="수정"/>
-			<item value="integer"/>
-			<item value="remove"/>
-			<item value="for"/>
-			<item value="랙"/>
-			<item value="capa"/>
-			<item value="Sc"/>
-			<item value="sc"/>
-			<item value="age"/>
-			<item value="this(int)"/>
-			<item value="total"/>
-			<item value="합"/>
-			<item value="총합"/>
+			<item value="한건"/>
+			<item value="replySelect"/>
+			<item value="boardReplySelect`"/>
+			<item value="boardReplySelect"/>
+			<item value="public class board"/>
+			<item value="담겠다"/>
+			<item value="boardinsert"/>
+			<item value="conn"/>
+			<item value="coon"/>
+			<item value="ReplySelect"/>
+			<item value="replySElect"/>
+			<item value="MyOracleConnection moc"/>
+			<item value="boardInsert"/>
+			<item value="insertRows"/>
+			<item value="ds = moc"/>
 		</list>
 		<list key="replacehistory">
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
-		<item key="DIALOG_X_ORIGIN" value="325"/>
-		<item key="DIALOG_Y_ORIGIN" value="263"/>
+		<item key="DIALOG_X_ORIGIN" value="31"/>
+		<item key="DIALOG_Y_ORIGIN" value="234"/>
 		<item key="DIALOG_WIDTH" value="322"/>
 		<item key="DIALOG_HEIGHT" value="391"/>
 		<item key="DIALOG_FONT_NAME" value="1|맑은 고딕|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|맑은 고딕"/>

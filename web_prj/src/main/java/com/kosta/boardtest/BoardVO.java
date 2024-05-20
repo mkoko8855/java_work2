@@ -11,11 +11,17 @@ public class BoardVO {
 	private String title;
 	private String contents;
 	private String regid;
-	private String regdate;
+	private String regdate; //디폴트값이 sysdate가 있어서 insert에서는 빼고 그냥넣어도 날짜는 들어갈것임
 	
-	List<ReplyVO> replies;
+	List<ReplyVO> replies; //게시글하나에 댓글 여러개다. 일대다 관계라고 얘기한다. 배열을 쓰면 안된다. 왜? -> 댓글이 몇개 들어올지 모르니까. 
+	//ArrayList로 했으면 ArrayList로만 받아야 한다! 해쉬로받을수도있으니
+	//모든 것을 다 받을 수 있게 List로하자!
+	
+	
+	
 	
 	public BoardVO() {}
+	
 	
 	
 	public BoardVO(int seq, String title, String contents, String regid, String regdate) {
@@ -37,7 +43,7 @@ public class BoardVO {
 
 
 	public List<ReplyVO> getReplies() {
-		return replies;
+		return replies; 
 	}
 
 

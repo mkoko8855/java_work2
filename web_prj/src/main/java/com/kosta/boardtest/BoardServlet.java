@@ -59,6 +59,7 @@ public class BoardServlet extends HttpServlet {
 
 		
 		//lec_servlet_call에서 작성했던 name값들을 파라미터값으로 적으면된다.
+		//무조건String으로받자. 숫자로받을꺼면 캐스팅해야됨.
 		String vUserid = request.getParameter("userid");
 		String vUserpw = request.getParameter("userpw");
 		String vGen = request.getParameter("gen");
@@ -67,7 +68,10 @@ public class BoardServlet extends HttpServlet {
 		String vUserfile = request.getParameter("userfile");
 		String vSsn = request.getParameter("ssn");
 		String vContents = request.getParameter("contents");
-
+		
+		//위는 하나씩 담았는데, 변수 하나 하나 담지말고 한번에 담으려면?
+		//VO에 담아야한다.
+		//UserVO로 set하면 받을 수 있다.
 		
 		
 		

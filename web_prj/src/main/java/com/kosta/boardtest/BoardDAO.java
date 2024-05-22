@@ -9,6 +9,8 @@ import java.util.List;
 
 import javax.sql.DataSource;
 
+import com.kosta.sample.common.MyOracleConnection;
+
 
 public class BoardDAO {
 	
@@ -78,6 +80,7 @@ public class BoardDAO {
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setInt(1, seq);
 			rs =  pstmt.executeQuery();
+			
 			rs.next();
 			bvo.setSeq(rs.getInt("seq"));
 			bvo.setTitle(rs.getString("title"));

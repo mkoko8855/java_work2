@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value=""/>
+		<item key="selection" value="Board"/>
 		<item key="wrap" value="true"/>
 		<item key="casesensitive" value="false"/>
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
-			<item value="한건"/>
-			<item value="replySelect"/>
-			<item value="boardReplySelect`"/>
-			<item value="boardReplySelect"/>
-			<item value="public class board"/>
-			<item value="담겠다"/>
-			<item value="boardinsert"/>
-			<item value="conn"/>
-			<item value="coon"/>
-			<item value="ReplySelect"/>
-			<item value="replySElect"/>
-			<item value="MyOracleConnection moc"/>
-			<item value="boardInsert"/>
-			<item value="insertRows"/>
-			<item value="ds = moc"/>
+			<item value="board"/>
+			<item value="board 연결"/>
+			<item value="목록"/>
+			<item value="pagecode"/>
+			<item value="page"/>
+			<item value="목록보기"/>
+			<item value="B002"/>
+			<item value="KEY_BOARDVO"/>
+			<item value="게시판"/>
+			<item value="request.get"/>
+			<item value="datatabless"/>
+			<item value="card-body"/>
+			<item value="card"/>
+			<item value="card.body"/>
+			<item value="Forgot Password"/>
 		</list>
 		<list key="replacehistory">
 		</list>

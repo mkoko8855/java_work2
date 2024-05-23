@@ -26,14 +26,13 @@ public class UserDAO {
 			if(conn != null) System.out.println("conn ok ");
 			else System.out.println("conn fail ");
 			
-			String sql = "insert into users(seq, userid, uname, email, passwd, regdate) values(users_seq.nextval,?,?,?,?,sysdate)";
+			String sql = "insert into users values(users_seq.nextval,?,?,?,?,sysdate,'u')";
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, uvo.getUserid());
 			pstmt.setString(2, uvo.getUname());
 			pstmt.setString(3, uvo.getEmail());
 			pstmt.setString(4, uvo.getPasswd());
 			insertRows =  pstmt.executeUpdate();
-			
 		
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -49,7 +48,7 @@ public class UserDAO {
 		ResultSet rs = null;
 		DataSource ds = null;
 		MyOracleConnection moc = new MyOracleConnection();  //클래스 분리시켜놓아서 인스턴스 생성해서 사용
-		UserVO uvo = new UserVO();
+		UserVO uvo = null;
 		
 		try {
 			//---------------DBCP를 사용한 DB 연결 -----------------------
@@ -64,6 +63,7 @@ public class UserDAO {
 			rs =  pstmt.executeQuery();
 			
 			if(rs.next()) {
+				uvo = new UserVO();
 				uvo.setUserid(rs.getString("userid"));
 				uvo.setUname(rs.getString("uname"));
 				uvo.setGrade(rs.getString("grade"));

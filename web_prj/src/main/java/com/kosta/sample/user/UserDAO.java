@@ -9,7 +9,7 @@ import com.kosta.sample.common.MyOracleConnection;
 
 //Data를 DB에 넣다뺏다하는 클래스 -> Data Access Obejct : DML
 public class UserDAO {
-	public int userInsert(UserVO uvo) {
+	public int userInsert(UserVO uvo) { //근데 이 메서드는 누가 호출해? -> new DAO를 할 수 있는 친구 -> jsp는못함 -> 바로 서블릿이다.
 		MyOracleConnection moc = new MyOracleConnection();  //클래스 분리시켜놓아서 인스턴스 생성해서 사용
 		DataSource ds = null;
 		Connection conn = null;
@@ -32,7 +32,7 @@ public class UserDAO {
 			pstmt.setString(2, uvo.getUname());
 			pstmt.setString(3, uvo.getEmail());
 			pstmt.setString(4, uvo.getPasswd());
-			insertRows =  pstmt.executeUpdate();
+			insertRows =  pstmt.executeUpdate(); //실행한 결과를 돌려주겠다. 즉, 위의 파라미터로 uvo가 들어왔고 int를 뱉어낸다.
 		
 		} catch (SQLException e) {
 			e.printStackTrace();

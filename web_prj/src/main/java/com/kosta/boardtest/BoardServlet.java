@@ -49,31 +49,41 @@ public class BoardServlet extends HttpServlet {
     
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		String pagecode = request.getParameter("pagecode");
+		String pagecode = request.getParameter("pagecode"); //pagecode -> 001, 002 꺼낼꺼야. request에서.
 		BoardDAO dao = new BoardDAO();
 		
 		//게시물 목록보기
-		if(pagecode.equals("B001")) {
-			ArrayList<BoardVO> list = dao.boardSelect(); //list를 이제 tables.jsp 에 넘겨줘야지
-			request.setAttribute("KEY_BOARDLIST", list); // -> 해당 요청에 list를 담고
+		if(pagecode.equals("B001")) { //-> 목록보기와 상세보기로 나눠져있기에 B001과 B002로나눔
+		
+			ArrayList<BoardVO> list = dao.boardSelect(); //list를 이제 tables.jsp 에 넘겨줘야지 -> 이 줄은 BoardDAO의 BoardSelect 메서드 호출해서 리턴받은걸 setAttribute한다
+			request.setAttribute("KEY_BOARDLIST", list); // -> 개체를 넘기는거는 키값정하고 디스패쳐 이용하여 포워딩한다 -> 리퀘스트에 set했고, 그걸 tables.jsp에게 보냄 -> 즉, 해당 요청에 list를 포워딩을 통해 담을 것이다.
+			
 			//HttpSession session = request.getSession();
 			//jsp와 연결고리인 rd를 이용하여
 			//forward -> request랑 response인 2개 갖고있는걸 .jsp한테 다 줄꺼야 
 			RequestDispatcher rd = request.getRequestDispatcher("tables.jsp");
 			rd.forward(request, response); 
+			//즉, reqeust를 이용해서 디스패쳐를 꺼냈고,
+			//그 requestDispatcher를 통해 포워딩했다.
+			//tables.jsp가보자
+			
+			
+			
 			
 			
 			//게시물 상세보기
 		}else if(pagecode.equals("B002")) {
-			int seq = Integer.parseInt(request.getParameter("seq")); //seq와 와야 selectone가능!!!!!
-			BoardVO bvo = dao.boardSelectOne(seq);
+			int seq = Integer.parseInt(request.getParameter("seq")); //seq와 와야 selectone가능!!!!! -> 겟파라미터는 다 String인데 우린 seq를 받으니 int타입으로 형변환을 해야한다. wrapper가 wrapper를 캐스팅 할 수 있으니. -> 이 줄이 핵심 코드가 되겠다.
+			BoardVO bvo = dao.boardSelectOne(seq); //서블릿에 던져주고
 			
-			request.setAttribute("KEY_BOARDVO", bvo);
+			request.setAttribute("KEY_BOARDVO", bvo); //DAO의 메서드가 return으로 bvo가 올 것이다.
 			RequestDispatcher rd = request.getRequestDispatcher("tables_detail.jsp");
 			rd.forward(request, response); 
+		
 		}else {
 			response.sendRedirect("500.html");
 		}
+		
 		
 		
 		
@@ -129,6 +139,28 @@ public class BoardServlet extends HttpServlet {
 	
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String pagecode = request.getParameter("pagecode");
+		
+		if(pagecode.equals("B003")) {
+			System.out.println("수정");
+			System.out.println(request.getParameter("seq"));
+			System.out.println(request.getParameter("regid"));
+			System.out.println(request.getParameter("regdate"));
+			System.out.println(request.getParameter("title"));
+			System.out.println(request.getParameter("contents"));
+		} else if(pagecode.equals("B004")) {
+			System.out.println("삭제");
+		}
+		
+		
+
+
+		    
+		
+		
+		
+		
+		
 		request.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html;charset=UTF-8");
 	}

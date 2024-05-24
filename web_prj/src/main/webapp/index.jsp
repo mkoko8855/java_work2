@@ -75,11 +75,13 @@
   <div class="collapse" id="pagesCollapseAuth" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
       <nav class="sb-sidenav-menu-nested nav">
       	  	
-      	  	<!-- 로그인 로그아웃 처리 -->
+      	  	<!-- 로그인 로그아웃 처리 -> 서블릿에서 세션넣어준것을 세션빼야지이제!-->
 <%
 String userid = (String)session.getAttribute("KEY_SESS_USERID");
 String uname  = (String)session.getAttribute("KEY_SESS_UNAME");
 String grade  = (String)session.getAttribute("KEY_SESS_GRADE");
+
+
 if (grade != null) {
 %>      
           <a class="nav-link" href="<%=request.getContextPath()%>/UserServlet">Logout</a>
@@ -109,12 +111,18 @@ if (grade != null) {
                                 Charts
                             </a>
                             
-                            <!-- 게시판 연결 -->
                             
+                            
+                            
+                            <!-- 게시판 연결 -->
+                            <!-- index.jsp에서 유저DAO를 호출한다. -->
                             <a class="nav-link" href="<%=request.getContextPath()%>/BoardServlet?pagecode=B001">
                                 <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                                 Tables
                             </a>
+                            
+                            
+                            
                             
                             
                         </div>

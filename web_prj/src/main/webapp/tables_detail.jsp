@@ -3,8 +3,8 @@
     	 pageEncoding="UTF-8"
 %>
 
-<%@ page import="java.util.ArrayList"%>
-<%@ page import="com.kosta.boardtest.BoardVO"%>
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="com.kosta.boardtest.BoardVO" %>
 
 
 <!DOCTYPE html>
@@ -124,7 +124,7 @@ if (grade != null) {
                             </a>
                             
 <!--  ------------------ BOARD 연결------------------------ -->                            
-<a class="nav-link" href="<%=request.getContextPath()%>/BoardServlet?pagecode=B002">
+ <a class="nav-link" href="<%=request.getContextPath()%>/BoardServlet">
      <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
      Tables    
  </a>
@@ -159,50 +159,72 @@ if (grade != null) {
                             <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
                             <li class="breadcrumb-item active">Tables</li>
                         </ol>
-                        
-                        
-                        <% 
-                        BoardVO bvo = (BoardVO) request.getAttribute("KEY_BOARDVO");
-                        if (bvo != null) {
-                        %>
                         <div class="card mb-4">
                             <div class="card-header">
                                 <i class="fas fa-table me-1"></i>
-                                Board Detail
+                                DataTable Example
                             </div>
                             <div class="card-body">
-                                <table class="table table-bordered">
-                                    <tr>
-                                        <th>글번호</th>
-                                        <td><%= bvo.getSeq() %></td>
-                                    </tr>
-                                    <tr>
-                                        <th>작성자</th>
-                                        <td><%= bvo.getRegid() %></td>
-                                    </tr>
-                                    <tr>
-                                        <th>작성일</th>
-                                        <td><%= bvo.getRegdate() %></td>
-                                    </tr>
-                                    <tr>
-                                        <th>제목</th>
-                                        <td><%= bvo.getTitle() %></td>
-                                    </tr>
-                                    <tr>
-                                        <th>내용</th>
-                                        <td><%= bvo.getContents() %></td>
-                                    </tr>
-                                    <tr>
-                                        <td colspan="2" align="center">
-                                            <a class="btn btn-primary btn-block">수정</a>
-                                            <a class="btn btn-primary btn-block">삭제</a>
-                                            <a class="btn btn-primary btn-block" href="<%= request.getContextPath() %>/BoardServlet?pagecode=B001">목록</a>
-                                        </td>
-                                    </tr>
-                                </table>
+
+<%
+
+BoardVO bvo = (BoardVO)request.getAttribute("KEY_BOARDVO");
+//int seq = bvo.getSeq();
+//bvo.getTitle(); 
+//bvo.getContents(); 
+//bvo.getRegid(); 
+//bvo.getRegdate();
+%>
+<form id="boardForm" >
+<input type="hidden" name="seq" value="<%=bvo.getSeq()%>">
+<input type="hidden" name="regid" value="<%=bvo.getRegid()%>">
+
+<table border="1" width="100%">
+<tr>
+   <th width="20%">글번호</th>
+   <td width="80%"><%=bvo.getSeq()%></td>
+</tr>
+<tr>
+      <th>작성자</th>
+      <td><%=bvo.getRegid()%></td>
+</tr>
+<tr>
+      <th>작성일</th>
+      <td><input type="text" name="regdate" value="<%=bvo.getRegdate()%>" readonly></td>
+</tr>
+<tr>
+      <th>제목</th>
+      <td>
+      	<input type="text" name="title" size=60  value="<%=bvo.getTitle()%>">
+      </td>
+</tr>
+<tr>
+      <th>내용</th>
+      <td>
+      	<textarea name="contents" cols="80" rows="6">
+      	<%=bvo.getContents()%>
+      	</textarea>
+      </td>
+</tr>
+<tr>
+	<td colspan=2 align="center">
+		<a id="uptButton" class="btn btn-primary btn-block">수정-B003</a>
+		<a id="delButton" class="btn btn-primary btn-block">삭제-B004</a>
+		<a id="listButton" class="btn btn-primary btn-block">목록-B001</a>
+	</td>
+</table>
+</form>
+
+
+
+
+
+
+
+
+
                             </div>
                         </div>
-                        <% } %>
                     </div>
                 </main>
                 <footer class="py-4 bg-light mt-auto">
@@ -223,5 +245,39 @@ if (grade != null) {
         <script src="js/scripts.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js" crossorigin="anonymous"></script>
         <script src="js/datatables-simple-demo.js"></script>
+        
+        
+<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script>
+		$(function() {
+			//---------------------------------------------------------
+			// <form> 제어하기
+			//---------------------------------------------------------
+			$("#uptButton").click(  function(){
+				alert("수정");
+				$("#boardForm").attr("method","post");
+				$("#boardForm").attr("action","/BoardServlet?pagecode=B003");
+				$("#boardForm").submit();
+				return true;
+			});
+			$("#delButton").click(  function(){
+				alert("삭제");
+				$("#boardForm").attr("method","post");
+				$("#boardForm").attr("action","/BoardServlet?pagecode=B004");
+				$("#boardForm").submit();
+				return true;
+			});
+			$("#listButton").click(  function(){
+				location.href = "/BoardServlet?pagecode=B001";
+			});            
+			
+			//------------------------------------------------------------
+			
+		});
+		
+	</script>
+        
+        
+        
     </body>
 </html>

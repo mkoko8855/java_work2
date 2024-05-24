@@ -81,7 +81,7 @@ public class BoardDAO {
 			pstmt.setInt(1, seq);
 			rs =  pstmt.executeQuery();
 			
-			rs.next();
+			rs.next(); //bvo에서 set, rs에서 get -> DB에서 꺼낸걸 bvo에 set했다!!!!!!!
 			bvo.setSeq(rs.getInt("seq"));
 			bvo.setTitle(rs.getString("title"));
 			bvo.setContents(rs.getString("contents"));
@@ -92,7 +92,7 @@ public class BoardDAO {
 		} finally {
 			moc.oracleClose(conn, pstmt, rs);
 		}
-		return bvo;
+		return bvo; //이거 서블릿으로 줄꺼야
 				
 	}
 	

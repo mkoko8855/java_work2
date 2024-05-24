@@ -1,9 +1,0 @@
-package com.kosta.boardtest;
-//VO
-public class BoardDTO {
-
-	public static void main(String[] args) {
-		
-	}
-
-}

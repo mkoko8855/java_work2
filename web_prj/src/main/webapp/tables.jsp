@@ -247,16 +247,20 @@
 								</tfoot>
 
 
+
+
+								<!-- B002는 상세내용이다. -->
+								<!-- /BoardServlet?seq=10&pagecode=B002 이런식으로 확인부터 -->
 								<tbody>
 									<%
-									ArrayList<BoardVO> list = (ArrayList<BoardVO>) request.getAttribute("KEY_BOARDLIST");
+									ArrayList<BoardVO> list = (ArrayList<BoardVO>)request.getAttribute("KEY_BOARDLIST");
 									for (BoardVO bvo : list) {
 									%>
 									<tr>
 										<td><%=bvo.getSeq()%></td>
-										<td><a
-											href="<%=request.getContextPath()%>/BoardServlet?pagecode=B002&seq=<%=bvo.getSeq()%>">
-												<%=bvo.getTitle()%>
+										<td>
+										<a href="<%=request.getContextPath()%>/BoardServlet?pagecode=B002&seq=<%=bvo.getSeq()%>">
+										<%=bvo.getTitle()%>
 										</a></td>
 										<td><%=bvo.getRegid()%></td>
 										<td><%=bvo.getRegdate()%></td>
@@ -265,6 +269,10 @@
 									}
 									%>
 								</tbody>
+
+
+
+
 
 
 								</tbody>

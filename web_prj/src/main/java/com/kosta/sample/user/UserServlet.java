@@ -89,9 +89,13 @@ public class UserServlet extends HttpServlet {
 					*/
 					
 					
-					if(insertRows == 1) {
+					if(insertRows == 1) { 
 						//회원가입 성공
 						response.sendRedirect("index.jsp");
+						//근데 여길 포워딩(서블릿에서사용한)방식으로바꾸면 어떻게될까? -> index.jsp로 가는건 맞는데, 제어권은 서블릿이 가지고 있기 떄문에 주소창은 서블릿이지만 서블릿한테 화면만 붙이는 느낌이다. 즉, 페이지 전환은 안된 것이다.
+						//request.getRequestDispatcher("index.jsp").forward(request, response);
+						//단순하게 가져오는건 상관없는데 라우팅할 부분에서는 포워딩 방식을 상당히 조심해야 한다.
+						//지금 insert문이니 포워딩문을 사용(새로고침 여러번)하면 디비에도 여러개의 값이 중복해서 들어가버린다.
 					} else {
 						//회원가입 실패
 						response.sendRedirect("500.html");

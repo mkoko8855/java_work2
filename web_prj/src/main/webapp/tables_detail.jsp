@@ -5,6 +5,7 @@
 
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="com.kosta.boardtest.BoardVO" %>
+<%@ page import="com.kosta.boardtest.ReplyVO" %>
 
 
 <!DOCTYPE html>
@@ -166,6 +167,9 @@ if (grade != null) {
                             </div>
                             <div class="card-body">
 
+
+
+
 <%
 
 BoardVO bvo = (BoardVO)request.getAttribute("KEY_BOARDVO");
@@ -222,6 +226,74 @@ BoardVO bvo = (BoardVO)request.getAttribute("KEY_BOARDVO");
 
 
 
+<%
+ArrayList<ReplyVO> rlist = (ArrayList<ReplyVO>)bvo.getReplies(); // bvo에서 추가로.
+
+if (rlist != null) { // 댓글 목록이 null이 아닌 경우에만 처리
+%>
+    <table width="100%" border="1">
+        <tr>
+            <th>작성자</th>
+            <th>댓글</th>
+            <th>작성일</th>
+            <th>삭제</th>
+        </tr>
+<%
+    for (ReplyVO rvo : rlist) {
+        int rseq = rvo.getRseq(); //시퀀스갖고와서 rseq에넣고
+        String reply = rvo.getReply();
+        String regid = rvo.getRegid();
+        String regdate = rvo.getRegdate();
+%>
+        <tr>
+            <td><%=regid%></td>
+            <td><%=reply%></td>
+            <td><%=regdate%></td>
+            
+                <!-- 삭제 -->
+            <td>
+                <font color="red">
+                    <a href="/BoardServlet?pagecode=B005&seq=<%=bvo.getSeq()%>&rseq=<%=rseq%>">[X]</a>
+                </font>
+            </td>
+        </tr>
+<%
+    }
+%>
+    </table>
+<%
+}
+%>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br>
+<form method="post" action="/BoardServlet?pagecode=B006">
+    <input type="hidden" name="seq" value="<%=bvo.getSeq()%>">
+    <table width="100%" border="1">
+        <tr>
+            <td>
+                <input type="text" size="100" name="reply">
+                <input type="submit" value="댓글등록">
+            </td>
+        </tr>
+    </table>
+</form>
+
+
+
+
 
                             </div>
                         </div>
@@ -245,6 +317,8 @@ BoardVO bvo = (BoardVO)request.getAttribute("KEY_BOARDVO");
         <script src="js/scripts.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js" crossorigin="anonymous"></script>
         <script src="js/datatables-simple-demo.js"></script>
+        
+        
         
         
 <script src="https://code.jquery.com/jquery-3.7.1.js"></script>

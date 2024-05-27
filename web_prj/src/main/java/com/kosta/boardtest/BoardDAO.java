@@ -213,7 +213,7 @@ public class BoardDAO {
 			ds = moc.myOracleDataSource();
 			conn = ds.getConnection();  
 
-			//String sql = "insert into board(seq,title,contens,regid) values(board_seq.nextval,?,?,?)";
+			//String sql = "insert into board(seq,title,contents,regid) values(board_seq.nextval,?,?,?)";
 			String sql = "insert into board values(board_seq.nextval,?,?,?,sysdate)";
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, bvo.getTitle());
@@ -291,4 +291,75 @@ public class BoardDAO {
 		return delRows;
 	}
 
+		
+	
+	//reply 삭제
+	public int replyDelete(int rseq) {
+        Connection conn = null;
+        PreparedStatement pstmt = null;
+        int delRows = 0;
+        DataSource ds = null;
+        MyOracleConnection moc = new MyOracleConnection();
+
+        try {
+            ds = moc.myOracleDataSource();
+            conn = ds.getConnection();
+
+            String sql = "DELETE FROM reply WHERE rseq = ?";
+            pstmt = conn.prepareStatement(sql);
+            pstmt.setInt(1, rseq);
+            delRows = pstmt.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            moc.oracleClose(conn, pstmt);
+        }
+        return delRows;
+    }
+	
+	
+	
+	
+	
+	public int replyInsert(ReplyVO rvo) {
+	    Connection conn = null;
+	    PreparedStatement pstmt = null;
+	    ResultSet rs = null;
+	    DataSource ds = null;
+	    MyOracleConnection moc = new MyOracleConnection();
+
+	    try {
+	        ds = moc.myOracleDataSource();
+	        conn = ds.getConnection();
+
+	        String sql = "INSERT INTO reply (rseq, reply, regid, seq, regdate) VALUES (reply_seq.nextval, ?, ?, ?, SYSDATE)";
+	        pstmt = conn.prepareStatement(sql);
+	        pstmt.setString(1, rvo.getReply());
+	        pstmt.setString(2, rvo.getRegid());
+	        pstmt.setInt(3, rvo.getSeq());
+
+	        int insertRows = pstmt.executeUpdate();
+	        return insertRows;
+	    } catch (SQLException e) {
+	        e.printStackTrace();
+	        return 0;
+	    } finally {
+	        moc.oracleClose(conn, pstmt, rs);
+	    }
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }

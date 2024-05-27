@@ -90,4 +90,11 @@ public class BoardVO {
 				+ regdate + ", replies=" + replies + "]";
 	}
 	
+	
+	
+	
+	
+	
+	
+	
 }

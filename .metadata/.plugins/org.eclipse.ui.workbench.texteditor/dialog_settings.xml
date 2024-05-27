@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value="getAttri"/>
+		<item key="selection" value="rseq"/>
 		<item key="wrap" value="true"/>
 		<item key="casesensitive" value="false"/>
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
-			<item value="getAttri"/>
-			<item value="loginForm"/>
+			<item value="rseq"/>
+			<item value="댓글삭제"/>
+			<item value="B005"/>
+			<item value="rd.forward"/>
+			<item value="setattribute"/>
+			<item value="setatti"/>
+			<item value="setattri"/>
+			<item value="set"/>
+			<item value="attribute"/>
+			<item value="attri"/>
 			<item value="B001"/>
-			<item value="boo1"/>
-			<item value="form"/>
-			<item value="래그"/>
-			<item value="수정"/>
-			<item value="게시판"/>
-			<item value="tables"/>
-			<item value="BOARD 연결"/>
-			<item value="board"/>
-			<item value="board 연결"/>
-			<item value="목록"/>
+			<item value="insert"/>
 			<item value="pagecode"/>
-			<item value="page"/>
+			<item value="pagecod"/>
+			<item value="uptButton"/>
 		</list>
 		<list key="replacehistory">
 		</list>

@@ -27,8 +27,7 @@
 	<!-- 웹앱의 my.css 임포트 -->
     <link href="css/styles.css" rel="stylesheet" />
 
-
-
+	
 
 	<meta charset="UTF-8">
 	<title>Insert title here</title>

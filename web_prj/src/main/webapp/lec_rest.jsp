@@ -79,25 +79,27 @@
 		 	 
  -->
 
-
+<!-- #1 클라이언트에서 스트링으로 보내면 스트링으로 받는 경우 -->
 <!--  ##################### 서버로 부터의 응답 String #######################  -->
 <h2>초간단 AJAX <font color=red>(F12필수)</font></h2>
-<form id="Str_Str_Form">
-<input id="searchGubun" type="hidden" name="searchGubun" value="">
-<input id="searchStr" type="text" name="searchStr"> 
+<form id="Str_Str_Form" >
+<input id="searchGubun" type=hidden name="searchGubun" value="">
+<input id="searchStr"   type="text" name="searchStr">
 <input type="button" id="AjaxBtn" value="초간단AJAX전송">
 </form>
-<hr><br><br><br><br><br><br><br><br><br>
+<hr>
 <div id="resultDIV"></div>
 
 
 
 
 
-
+<!-- #2 클라이언트에서 스트링, 제이슨스트링, 제이슨으로 보내고 서버는 스트링, 제이슨스트링, 제이슨 으로 받는 경우  -->
+<!--  ##################### 서버로 부터의 응답 String #######################  -->
+<!-- 일일이 폼 안에 id, value를 만들지 말고 한번에 하는 방법을 알아보자 -->
 <!--  ##################### 서버로 부터의 응답 String #######################  -->
 <h2>서버로 부터의 응답 String <font color=red>(F12필수)</font></h2>
-<form id="Str_Str_Form" action="/RestServlet" method="get">
+<form id="Str_Str_Form1">
 <select name="searchGubun">
 	<option value="title">제목</option>
 	<option value="contents">내용</option>
@@ -107,13 +109,13 @@
 <input type="button" id="1__Str_Str_Btn" value="1.Str-Str">
 </form>
 <hr>
+<!-- 그러나 #1번과 똑같으니 패쓰 -->
 
 
 
 
 
-
-
+<!-- #3 -->
 <form id="JsonStr_Str_Form" action="/RestServlet" method="get">
 <select name="searchGubun">
 	<option value="title">제목</option>
@@ -130,7 +132,7 @@
 
 
 
-
+<!-- #4 -->
 <form id="Json_Str_Form" action="/RestServlet" method="get">
 <select name="searchGubun">
 	<option value="title">제목</option>
@@ -147,10 +149,11 @@
 
 
 
-
+<!-- #5 -->
+<!--  ##################### 서버로 부터의 응답 JSON #######################  -->
 <!--  ##################### 서버로 부터의 응답 JSON #######################  -->
 <h2>서버로 부터의 응답 JSON <font color=red>(F12필수)</font></h2>
-<form id="Str_Json_Form" action="/RestServlet" method="get">
+<form id="Str_Json_Form" >
 <select name="searchGubun">
 	<option value="title">제목</option>
 	<option value="contents">내용</option>
@@ -166,7 +169,7 @@
 
 
 
-
+<!-- #6 -->
 <form id="JsonStr_Json_Form" action="/RestServlet" method="get">
 <select name="searchGubun">
 	<option value="title">제목</option>
@@ -182,7 +185,7 @@
 
 
 
-
+<!-- #7 -->
 <form id="Json_Json_Form" action="/RestServlet" method="get">
 <select name="searchGubun">
 	<option value="title">제목</option>
@@ -203,6 +206,7 @@
 
 <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
 <script>
+    //#1
 	//$(function() {    });
 	$("#AjaxBtn").click(  function(){
 		//alert("초간단AJAX");
@@ -211,8 +215,8 @@
 		$.ajax({
 			//이 버튼이 클릭되면 ajax(비동기통신)작동해라
 			method : "GET",
-			url      : "/RestServlet",
-			data     : "searhGubun="+sg+"&searchStr="+ss,
+	        url: "<%=request.getContextPath()%>/RestServlet?pagecode=R001",
+			data     : "searhGubun="+sg+"&searchStr="+ss, //키는밸류 키는밸류~ -> 포스트도 이렇게 간다. 헤더/바디에 실리는지에 갈린다
 			error    : function(myval){ console.log("이건에러" + myval); },
 			success  : function(myval){ console.log("이건성공" + myval); 
 			$("#resultDIV").html("<b>"+myval+"</b>")
@@ -225,46 +229,165 @@
 	
 	
 	
-	$("#1__Str_Str_Btn").click(  function(){
-		alert("1");
+	
+	
+	$("#1__Str_Str_Btn").click(function() {
+	    //alert("1");
+	    var sendFormData = $("#Str_Str_Form1").serialize(); // 시리얼라이즈는 바로위의 sg,ss 변수선언이 필요없고, data : "searhGubun="+sg+"&searchStr="+ss, 이 구문도 필요가 없다.
+	    console.log(sendFormData);
+	    $.ajax({
+	        method: "GET",
+	        url: "<%=request.getContextPath()%>/RestServlet?pagecode=R001",
+	        data: sendFormData,
+	        error: function(myval) {
+	            console.log("이건에러:" + myval);
+	        },
+	        success: function(myval) {
+	            console.log("이건성공:" + myval); //JSON모양의 글자가 들어옴
+	            var myval_obj = JSON.parse(myval);   //obj = JSON.parse(str); -> JSON모양의 글자를 객체 JSON으로 변환
+	            console.log("이건성공변환:" + myval_obj);
+	            console.log("이건성공변환:" + myval_obj[0]["regid"]); //RestServlet.java클래스의 kim이찍힘
+	            
+	            //지금 [{"seq":0, "title":"aaa",}] 이런식으로 값이 들어와있다.
+	            //https://api.jquery.com/jQuery.map/ -> 루프돌리기
+	            var htmlStr = "<table border=1 width=50%><tr><th>제목</th><th>글쓴이</th></tr>";
+					$.map( myval_obj, function( MYval, MYidx ) {
+						htmlStr += "<tr><td>" +MYval["title"] + "</td><td>"+MYval["regid"] +"</td></tr>"
+						//console.log(MYval["title"] + "," + MYval["regid"] + "," + MYidx);
+				});
+					htmlStr += "</table>";
+					
+					$("#resultDIV").empty();
+					$("#resultDIV").html("1. <b>"+htmlStr+"</b>");
+	        }
+	    });
 	});
+
 	
 	
 	
 	
 	
+	
+	
+	// 제이슨 모양의 글자를 보내라 -> 위에 하나하나 쿼리스트링 모양으로 전송했다.
+	// 그리고, 쿼리스트링 말고 바로 위에도 같은 형식이다.
 	$("#2__JsonStr_Str_Btn").click(  function(){
-		alert("2");
+		//alert("2");
+		var objData = {"name":"kim","pw":"123"};
+		console.log(objData); //전송하기 전에 개체 데이터 하나.
+		
+		var strData = JSON.stringify(objData)
+		console.log(strData); //스트링기 파이로 찍히는거 하나.
+		
+		
+		$.ajax({
+			method      : "POST",
+	        url         : "<%=request.getContextPath()%>/RestServlet?pagecode=R002",
+	        contentType : "application/x-www-form-urlencoded; charset=UTF-8",
+	        data 		: "MY_JSONKEY=" + JSON.stringify(objData),    //이건 application/x-www-form-urlencoded; charset=UTF-8 형태이다. 
+	  		error 	    : function(myval){ console.log("에러:" + myval);   },
+	  		success     : function(myval){ console.log("성공:" + myval);    }
+		});
 	});
 	
 	
 	
 	
+	
+	
+	//오로지 제이슨으로만 보내기
 	$("#3__Json_Str_Btn").click(  function(){
-		alert("3");
+		var objData = {"title":"aaaaatitle","regid":"hong"};
+		$.ajax({
+			method      : "POST",
+	        url         : "<%=request.getContextPath()%>/RestServlet?pagecode=R003",
+	        contentType : "application/json; charset=UTF-8",
+	        data 		: JSON.stringify(objData),   //키없이 스트링기파이로 감싸서보낼거
+	  		error 	    : function(myval){ console.log("에러:" + myval);   },
+	  		success     : function(myval){ console.log("성공:" + myval);    }
+		});
 	});
+	
+	
+	
+	
+	
+	
+	
+	//4번부터는 이제 내보내는건 전부 JSON이다
+	
+	
 	
 	
 	
 	
 	$("#4__Str_Json_Btn").click(  function(){
-		alert("4");
+		var sendFormData = $("#Str_Json_Form").serialize();  //searchGubun=contents&searchStr=11111
+		$.ajax({
+			method      : "POST",
+	        url         : "<%=request.getContextPath()%>/RestServlet?pagecode=R004",
+	        data 		: sendFormData,   
+	        dataType    : "json",    //생략가능
+	  		error 	    : function(myval){ console.log("에러:" + myval);   },
+	  		success     : function(myval){ //{"status":"200", "message":"R004 응답 ok"}
+	  									  console.log("성공:" + myval);   
+	  									  console.log(myval['status'] + "," + myval['message']);   
+	  									 }
+		});
 	});
+	
+	
+	
+	
 	
 	
 	
 	
 	
 	$("#5__JsonStr_Json_Btn").click(  function(){
-		alert("5");
+		var objData = {"name":"kim","pw":"123"};
+		console.log(objData);
+		
+		var strData  = JSON.stringify(objData)
+		console.log(strData);
+		
+		$.ajax({
+			method      : "POST",
+	        url         : "<%=request.getContextPath()%>/RestServlet?pagecode=R005",
+	        contentType : "application/x-www-form-urlencoded; charset=UTF-8",
+	        data 		: "MY_JSONKEY=" + JSON.stringify(objData) ,   
+	        dataType    : "json",    //생략가능
+	  		error 	    : function(myval){ console.log("에러:" + myval);   },
+	  		success     : function(myval){ //{"status":"200", "message":"R004 응답 ok"}
+	  									  console.log("성공:" + myval);   
+	  									  console.log(myval['status'] + "," + myval['message']);   
+	  									 }
+		});
 	});
 	
+	
+	
+
+
 	
 	
 	
 	
 	$("#6__Json_Json_Btn").click(  function(){
-		alert("6");
+		var objData = {"title":"aaaaatitle","regid":"hong"};
+		$.ajax({
+			method      : "POST",
+	        url         : "<%=request.getContextPath()%>/RestServlet?pagecode=R006",
+	        contentType : "application/json; charset=UTF-8",
+	        data 		: JSON.stringify(objData),   
+	        dataType    : "json",    //생략가능
+	  		error 	    : function(myval){ console.log("에러:" + myval);   },
+	  		success     : function(myval){ //{"status":"200", "message":"R004 응답 ok"}
+	  									  console.log("성공:" + myval);   
+	  									  console.log(myval['status'] + "," + myval['message']);   
+	  									 }
+		});
 	});
 	
 </script>

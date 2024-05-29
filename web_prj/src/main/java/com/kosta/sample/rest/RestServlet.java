@@ -65,7 +65,7 @@ public class RestServlet extends HttpServlet {
 			
 			
 			//우린 객체를 글자로만 바꿀 수 있으면 된다.
-			String gsonString = gson.toJson(list); //리스트를 글자로 바꿔라
+			String gsonString = gson.toJson(list); //리스트를 글자로 바꿔라 -> 글자로 바꿔서 .jsp에서는 var myval_obj 변수로 받는다!!!
 			System.out.println(gsonString + "," + gsonString.getClass());
 			//[{"seq":0,"title":"aaa","regid":"kim"},{"seq":0,"title":"bbb","regid":"hong"}],class java.lang.String
 			PrintWriter out = response.getWriter(); //리다이렉트 포워드처럼 어디로 가라 가 아니라, 응답을 주라고 했다.
@@ -94,7 +94,10 @@ public class RestServlet extends HttpServlet {
 		//002도 003도 제이슨 모양의 String이 온다는 것이다.
 		if (pagecode.equals("R003")) {
 			response.setContentType("text/html;charset=UTF-8");
-			String jsonStr = request.getReader().lines().collect(Collectors.joining());
+			String jsonStr = request.getReader().lines().collect(Collectors.joining()); //->키가없이 받는 방식이라 독특하다. 스트링으로 받는 방법이다!
+			//bvo = gson.fromJson(jsonStr,BoardVO.class);
+			//bvo.getRegid();
+			
 			System.out.println(jsonStr + "," + jsonStr.getClass());
 			
 			// obj  : JSON.stringify({"title":"aaaaatitle","regid":"hong"});
@@ -104,16 +107,23 @@ public class RestServlet extends HttpServlet {
 			System.out.println(bvo.getTitle()); 
 			
 			PrintWriter out = response.getWriter();
-			out.print("R003 응답 ok1");
+			out.print("R003 응답 ok1"); //그냥 스트링으로 보냈다.
 			out.print(bvo.getTitle());
 			
 			
 		} else if (pagecode.equals("R002")) {
-			//키 하나 잡고 제이슨데이터를 묶어서 보내기
+			//키 하나 잡고 제이슨데이터를 묶어서 보내기.
+			//.jsp에서 보낼떄 키를 잡아줬으니 여기서 키로 받아서꺼내자
+			//그럼 {"name":"kim"} 형식으로 받는데,
+			//스트링이나 제이슨으로 파싱해야한다.
+			//GSON을 이용해서 제이슨으로 파싱한다
 			response.setContentType("text/html;charset=UTF-8");
 			String jsonStr = request.getParameter("MY_JSONKEY");
+			//map = gson.fromJson(jsonStr,HashMap.class);
+			//map.get("pw");)
 			System.out.println(jsonStr + "," + jsonStr.getClass());
 			
+			//그냥 스트링으로 응답OK 형식으로 다시 .jsp에 보냈다.
 			PrintWriter out = response.getWriter();
 			out.print("R002 응답 OK");
 			
@@ -121,7 +131,8 @@ public class RestServlet extends HttpServlet {
 			//결국 R001,R002,R003 셋다 스트링으로 오고가고한것임 
 		
 		} else if(pagecode.equals("R004")) {
-			response.setContentType("application/json; charset=UTF-8");
+			
+			response.setContentType("application/json; charset=UTF-8"); //->들어오는 데이터는 응답을 제이슨으로 받을 것이다.
 			
 			HashMap map = new HashMap<String, String>();
 			map.put("status", "200");

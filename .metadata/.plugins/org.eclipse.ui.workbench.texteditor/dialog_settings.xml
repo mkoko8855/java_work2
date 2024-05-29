@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value="rseq"/>
+		<item key="selection" value="request.setAttribute"/>
 		<item key="wrap" value="true"/>
 		<item key="casesensitive" value="false"/>
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
+			<item value="request.setAttribute"/>
+			<item value="toJson"/>
+			<item value="쿼리스트링 말고"/>
 			<item value="rseq"/>
 			<item value="댓글삭제"/>
 			<item value="B005"/>
@@ -20,9 +23,6 @@
 			<item value="attri"/>
 			<item value="B001"/>
 			<item value="insert"/>
-			<item value="pagecode"/>
-			<item value="pagecod"/>
-			<item value="uptButton"/>
 		</list>
 		<list key="replacehistory">
 		</list>
@@ -37,5 +37,12 @@
 	<section name="org.eclipse.ui.texteditor.GotoLineAction$GotoLineDialog_dialogBounds">
 		<item key="DIALOG_X_ORIGIN" value="243"/>
 		<item key="DIALOG_Y_ORIGIN" value="391"/>
+	</section>
+	<section name="org.eclipse.jst.jsp.ui.internal.preferences.ui.JSPTemplatePreferencePage$JSPEditTemplateDialog_dialogBounds">
+		<item key="DIALOG_X_ORIGIN" value="64"/>
+		<item key="DIALOG_Y_ORIGIN" value="220"/>
+		<item key="DIALOG_WIDTH" value="610"/>
+		<item key="DIALOG_HEIGHT" value="434"/>
+		<item key="DIALOG_FONT_NAME" value="1|맑은 고딕|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|맑은 고딕"/>
 	</section>
 </section>

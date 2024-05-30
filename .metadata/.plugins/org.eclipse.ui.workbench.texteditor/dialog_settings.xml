@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value="request.setAttribute"/>
+		<item key="selection" value=""/>
 		<item key="wrap" value="true"/>
 		<item key="casesensitive" value="false"/>
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
-			<item value="request.setAttribute"/>
-			<item value="toJson"/>
-			<item value="쿼리스트링 말고"/>
-			<item value="rseq"/>
-			<item value="댓글삭제"/>
-			<item value="B005"/>
-			<item value="rd.forward"/>
-			<item value="setattribute"/>
-			<item value="setatti"/>
-			<item value="setattri"/>
-			<item value="set"/>
-			<item value="attribute"/>
-			<item value="attri"/>
-			<item value="B001"/>
-			<item value="insert"/>
+			<item value="&lt;font color="/>
+			<item value="&lt;font color ="/>
+			<item value="&lt;font color&gt;"/>
+			<item value="&lt;font color"/>
+			<item value="color=red"/>
+			<item value="세션 보이기"/>
+			<item value="로그인"/>
+			<item value="&lt;%"/>
+			<item value="세션"/>
+			<item value="세션보이기"/>
+			<item value="userid"/>
+			<item value="grade"/>
+			<item value="c:set"/>
+			<item value="ArrayList"/>
+			<item value="사용자"/>
 		</list>
 		<list key="replacehistory">
 		</list>
